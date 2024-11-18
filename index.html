@@ -1,0 +1,161 @@
+<!DOCTYPE html>  
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>free knee surgery</title>
+    <style>
+        /* Define the custom font */
+        @font-face {
+            font-family: 'Dosis ExtraBold';
+            src: url('fonts/Dosis-ExtraBold.ttf') format('truetype');
+        }
+
+        /* Apply the font to the body */
+        body {
+            display: flex;
+            justify-content: center; /* Center horizontally */
+            align-items: center;     /* Center vertically */
+            height: 100vh;           /* Full viewport height */
+            margin: 0;               /* Remove default margin */
+            font-family: Dosis, sans-serif; /* Optional, for better font */
+            background-color: #333333; /* Dark grey background */
+            overflow: hidden;        /* Prevent scrolling */
+            position: relative;      /* Required for particles div */
+        }
+
+        #particles-js {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 0; /* Behind everything else */
+        }
+
+        /* Button styles */
+        button {
+            padding: 15px 30px;
+            font-size: 18px;
+            font-family: 'Dosis ExtraBold', sans-serif; /* Apply custom font to button */
+            cursor: pointer;
+            background-color: black; /* White background */
+            color: white;            /* Black text */
+            border: 2px solid black; /* Optional, black border */
+            border-radius: 5px;      /* Rounded corners */
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+            transition: background-color 0.3s ease, color 0.3s ease;
+            z-index: 1; /* In front of particles */
+            position: relative; /* To stack correctly */
+        }
+
+        /* Hover effects on button */
+        button:hover {
+            background-color: white; /* Black background on hover */
+            color: black;            /* White text on hover */
+        }
+
+        /* Full-screen image styling */
+        #fullscreen-image {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            z-index: 2; /* In front of particles and button */
+            display: none; /* Hidden by default */
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Particles Background -->
+    <div id="particles-js"></div>
+
+    <!-- Button -->
+    <button onclick="playSound()">click for free knee surgery</button>
+
+    <!-- Full-screen Image (hidden initially) -->
+    <img id="fullscreen-image" src="images/image.png" alt="Fullscreen Image">
+
+    <!-- Include sound file -->
+    <audio id="button-sound" src="sounds/buttonclicked.mp3"></audio>
+
+    <script src="particles/particles.min.js"></script>
+
+    <script>
+        // Initialize particles.js
+        particlesJS('particles-js', {
+            "particles": {
+                "number": {
+                    "value": 100,
+                    "density": {
+                        "enable": true,
+                        "value_area": 800
+                    }
+                },
+                "color": {
+                    "value": "#ffffff"
+                },
+                "shape": {
+                    "type": "circle",
+                    "stroke": {
+                        "width": 0,
+                        "color": "#000000"
+                    }
+                },
+                "opacity": {
+                    "value": 1,
+                    "random": false
+                },
+                "size": {
+                    "value": 10,
+                    "random": false
+                },
+                "line_linked": {
+                    "enable": false,
+                    "distance": 150,
+                    "color": "#ffffff",
+                    "opacity": 0.4,
+                    "width": 1
+                },
+                "move": {
+                    "enable": true,
+                    "speed": 9.5,
+                    "direction": "none",
+                    "random": false,
+                    "straight": false,
+                    "out_mode": "out",
+                    "bounce": true
+                }
+            },
+            "interactivity": {
+                "detect_on": "canvas",
+                "events": {
+                    "onhover": {
+                        "enable": false,
+                        "mode": "repulse"
+                    },
+                    "onclick": {
+                        "enable": false,
+                        "mode": "push"
+                    }
+                }
+            },
+            "retina_detect": false
+        });
+
+        // Function to play the sound and show the image
+        function playSound() {
+            // Play the sound from the sounds folder
+            document.getElementById('button-sound').play();
+            
+            // Display the image
+            var image = document.getElementById('fullscreen-image');
+            image.style.display = 'block'; // Show the image
+        }
+    </script>
+
+</body>
+</html>
